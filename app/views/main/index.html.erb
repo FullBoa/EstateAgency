@@ -1,0 +1,114 @@
+<%= stylesheet_link_tag    'Bundles/main', media: 'all', 'data-turbolinks-track' => false %>
+<%= javascript_include_tag 'Bundles/main', 'data-turbolinks-track' => false %>
+
+<div id="first-page" class="first-block page-block">
+  <div class="login-row">
+    <% if account_signed_in? %>
+        <span class="account-info">
+          <a class="block-title" href="/accounts/my"><%= current_account.fio %></a>
+          <div class="additional-info"><%= Account.types[current_account.account_type][:label] %></div>
+        </span>
+        <span class="btn-wrapper">
+            <%= link_to('Выход', destroy_account_session_path, :method => :delete, :class => 'btn dark-btn') %>
+        </span>
+    <% else %>
+        <a href="/accounts/sign_in" class="btn dark-btn">Вход</a>
+    <% end %>
+  </div>
+  <div class="company-title text-xs-center">
+    <span class="title-text">Алькор</span>
+    <h4 class="additional-info">информационное агенство недвижимости</h4>
+  </div>
+
+  <div class="company-info text-xs-center">
+    <div class="row">
+      <div class="col-xs-6 step">
+        <div class="step-caption">Подберите варианты</div>
+      </div>
+      <div class="col-xs-6 step">
+        <div class="step-caption">Свяжитесь с менеджером</div>
+      </div>
+    </div>
+    <div class="row steps-row">
+      <div class="col-xs-6 step">
+        <span class="phone-number mdi mdi-city"></span>
+        <span class="mdi mdi-magnify step-icon"></span>
+      </div>
+      <div class="col-xs-6 step">
+        <span class="mdi mdi-phone step-icon"></span>
+        <span class="phone-number">8&nbsp;960&nbsp;571&nbsp;24&nbsp;55</span>
+      </div>
+    </div>
+    <div class="row description">
+      <div class="col-xs-12">
+        <p>Инновационный подход к аренде жилья напрямую от собственников. Гибкий поиск и удобное представление максимально полной информации об объектах. Лояльная стоимость услуг.
+
+          Арендуя недвижимость через "Алькор", вы получаете гарантию, что сделка будет проведена в полном соответствии с действующим законодательством, в кратчайшие сроки, по наилучшей цене. </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="to-demo-btn center-btn">
+    <span class="to-demo-link btn-text">
+      <span>подобрать помещение</span>
+      <span class="icon mdi mdi-chevron-down"></span>
+    </span>
+  </div>
+</div>
+<div id="second-page" class="demo-page page-block">
+  <div class="demo-block-bkg"></div>
+
+  <div class="to-estates-btn center-btn">
+    <a href="/estates" class="to-estates-link btn-text">перейти к базе объектов</a>
+  </div>
+
+  <div class="c-estates-demo estates-demo-block">
+    <div class="filters-block c-filter"></div>
+    <div class="grid-block c-grid"></div>
+    <div class="footer-block c-footer"></div>
+  </div>
+</div>
+
+
+<script type="text/html" id="estates-demo-filters-template">
+    <div class="row">
+        <div class="col-sm-3 filter-item">
+            <select class="c-estate-type-filter" multiple></select>
+        </div>
+        <div class="col-sm-3 filter-item">
+            <select class="c-city-area-filter" multiple></select>
+        </div>
+        <div class="col-sm-3 filter-item">
+            <input type="text" class="c-min-footage" placeholder="кв.м. от">
+        </div>
+        <div class="col-sm-3 filter-item">
+            <input type="text" class="c-max-footage" placeholder="кв.м. до">
+        </div>
+    </div>
+    <div class="row cost-slider">
+        <div class="col-sm-2 hidden-xs">
+            <input type="text" class="c-cost-min-filter">
+        </div>
+        <div class="col-sm-8 col-xs-12 slider-box">
+            <div class="c-cost-slider"></div>
+        </div>
+        <div class="col-sm-2 hidden-xs">
+            <input type="text" class="c-cost-max-filter">
+        </div>
+    </div>
+     <div class="row">
+        <div class="sorting-label text-xs-right col-xs-9">
+            Сортировка:
+        </div>
+        <div class="col-xs-3">
+            <select class="c-order-by"></select>
+        </div>
+    </div>
+</script>
+
+
+
+
+
+
+

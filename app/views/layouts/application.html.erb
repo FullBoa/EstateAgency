@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Алькор62.рф</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => false %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
+  <%= favicon_link_tag(source='favicon.ico', options={}) %>
+  <%= csrf_meta_tags %>
+</head>
+<body <% if current_account != nil && current_account.manager? %> class="apply-manager-mode" <% else %> class="apply-user-mode" <% end %>>
+
+<%= yield %>
+
+<%= render 'shared/popup_templates'%>
+</body>
+</html>

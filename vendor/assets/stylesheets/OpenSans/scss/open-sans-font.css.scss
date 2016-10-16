@@ -1,0 +1,102 @@
+﻿$font-path : "/assets/OpenSans/fonts";
+
+/* font-family: "OpenSansRegular"; */
+@font-face {
+  font-family: "OpenSansRegular";
+  src: url("#{$font-path}/OpenSansRegular/OpenSansRegular.eot");
+  src: url("#{$font-path}/OpenSansRegular/OpenSansRegular.eot?#iefix")format("embedded-opentype"),
+  url("#{$font-path}/OpenSansRegular/OpenSansRegular.woff") format("woff"),
+  url("#{$font-path}/OpenSansRegular/OpenSansRegular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+/* font-family: "OpenSansLight"; */
+@font-face {
+  font-family: "OpenSansLight";
+  src: url("#{$font-path}/OpenSansLight/OpenSansLight.eot");
+  src: url("#{$font-path}/OpenSansLight/OpenSansLight.eot?#iefix")format("embedded-opentype"),
+  url("#{$font-path}/OpenSansLight/OpenSansLight.woff") format("woff"),
+  url("#{$font-path}/OpenSansLight/OpenSansLight.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+/* font-family: "OpenSansItalic"; */
+@font-face {
+  font-family: "OpenSansItalic";
+  src: url("#{$font-path}/OpenSansItalic/OpenSansItalic.eot");
+  src: url("#{$font-path}/OpenSansItalic/OpenSansItalic.eot?#iefix")format("embedded-opentype"),
+  url("#{$font-path}/OpenSansItalic/OpenSansItalic.woff") format("woff"),
+  url("#{$font-path}/OpenSansItalic/OpenSansItalic.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+/* font-family: "OpenSansBold"; */
+@font-face {
+  font-family: "OpenSansBold";
+  src: url("#{$font-path}/OpenSansBold/OpenSansBold.eot");
+  src: url("#{$font-path}/OpenSansBold/OpenSansBold.eot?#iefix")format("embedded-opentype"),
+  url("#{$font-path}/OpenSansBold/OpenSansBold.woff") format("woff"),
+  url("#{$font-path}/OpenSansBold/OpenSansBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+/* font-family: "OpenSansExtraBold"; */
+@font-face {
+  font-family: "OpenSansExtraBold";
+  src: url("#{$font-path}/OpenSansExtraBold/OpenSansExtraBold.eot");
+  src: url("#{$font-path}/OpenSansExtraBold/OpenSansExtraBold.eot?#iefix")format("embedded-opentype"),
+  url("#{$font-path}/OpenSansExtraBold/OpenSansExtraBold.woff") format("woff"),
+  url("#{$font-path}/OpenSansExtraBold/OpenSansExtraBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+/* font-family: "OpenSansExtraBoldItalic"; */
+@font-face {
+  font-family: "OpenSansExtraBoldItalic";
+  src: url("#{$font-path}/OpenSansExtraBoldItalic/OpenSansExtraBoldItalic.eot");
+  src: url("#{$font-path}/OpenSansExtraBoldItalic/OpenSansExtraBoldItalic.eot?#iefix")format("embedded-opentype"),
+  url("#{$font-path}/OpenSansExtraBoldItalic/OpenSansExtraBoldItalic.woff") format("woff"),
+  url("#{$font-path}/OpenSansExtraBoldItalic/OpenSansExtraBoldItalic.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+/* font-family: "OpenSansBoldItalic"; */
+@font-face {
+  font-family: "OpenSansBoldItalic";
+  src: url("#{$font-path}/OpenSansBoldItalic/OpenSansBoldItalic.eot");
+  src: url("#{$font-path}/OpenSansBoldItalic/OpenSansBoldItalic.eot?#iefix")format("embedded-opentype"),
+  url("#{$font-path}/OpenSansBoldItalic/OpenSansBoldItalic.woff") format("woff"),
+  url("#{$font-path}/OpenSansBoldItalic/OpenSansBoldItalic.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+/* font-family: "OpenSansRegularItalic"; */
+@font-face {
+  font-family: "OpenSansRegularItalic";
+  src: url("#{$font-path}/OpenSansRegularItalic/OpenSansRegularItalic.eot");
+  src: url("#{$font-path}/OpenSansRegularItalic/OpenSansRegularItalic.eot?#iefix")format("embedded-opentype"),
+  url("#{$font-path}/OpenSansRegularItalic/OpenSansRegularItalic.woff") format("woff"),
+  url("#{$font-path}/OpenSansRegularItalic/OpenSansRegularItalic.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+/* font-family: "OpenSansSemiBold"; */
+@font-face {
+  font-family: "OpenSansSemiBold";
+  src: url("#{$font-path}/OpenSansSemiBold/OpenSansSemiBold.eot");
+  src: url("#{$font-path}/OpenSansSemiBold/OpenSansSemiBold.eot?#iefix")format("embedded-opentype"),
+  url("#{$font-path}/OpenSansSemiBold/OpenSansSemiBold.woff") format("woff"),
+  url("#{$font-path}/OpenSansSemiBold/OpenSansSemiBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+/* font-family: "OpenSansSemiBoldItalic"; */
+@font-face {
+  font-family: "OpenSansSemiBoldItalic";
+  src: url("#{$font-path}/OpenSansSemiBoldItalic/OpenSansSemiBoldItalic.eot");
+  src: url("#{$font-path}/OpenSansSemiBoldItalic/OpenSansSemiBoldItalic.eot?#iefix")format("embedded-opentype"),
+  url("#{$font-path}/OpenSansSemiBoldItalic/OpenSansSemiBoldItalic.woff") format("woff"),
+  url("#{$font-path}/OpenSansSemiBoldItalic/OpenSansSemiBoldItalic.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}

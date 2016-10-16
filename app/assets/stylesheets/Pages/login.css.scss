@@ -1,0 +1,27 @@
+@import "Core/navigation-panel.css.scss";
+
+
+.authorization-block{
+  width: 400px;
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  top: 200px;
+  padding: 10px 30px;
+  font-size: 14px;
+
+  background-color: $menu-background-color;
+  color: $menu-text-color;
+
+  .actions {
+    margin: 20px 0px;
+  }
+
+  input[type="submit"] {
+    border: 1px solid;
+  }
+
+  .field {
+    margin-top: 10px;
+  }
+}

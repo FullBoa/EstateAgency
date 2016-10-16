@@ -1,0 +1,23 @@
+<%= render 'shared/navigation_panel'%>
+<div class="main-block">
+  <h1>Моя учетная запись</h1>
+
+  <h4 class="margin-top-30">
+    <span class="block-title"><%= @account.fio%></span>
+    <div class="additional-info"><%= @account.account_type%></div>
+  </h4>
+  <% if not @account.is_manager %>
+      <div class="margin-top-30">
+        <span class="block-title">Доcтупные типы объектов:</span>
+        <div class="additional-info"><%= @account.estate_types.collect { |type| type.title }.join(', ')%></div>
+      </div>
+      <div class="margin-top-10">
+        <span class="block-title">Срок действия подписки:</span>
+        <div class="additional-info">
+          c&nbsp;<%= @account.start_date %>
+          по&nbsp;<%= @account.end_date %>
+        </div>
+        <div class="additional-info">(дней осталось: <%= @account.days_left%>)</div>
+      </div>
+  <% end %>
+</div>

@@ -1,0 +1,82 @@
+<%= stylesheet_link_tag    'Bundles/users', media: 'all', 'data-turbolinks-track' => false %>
+<%= javascript_include_tag 'Bundles/users', 'data-turbolinks-track' => false %>
+
+<%= render 'shared/navigation_panel'%>
+<div class="main-block" id="main-block">
+  <div class="title-row page-title">
+    <div class="row">
+      <div class="col-xs-6">
+        <div class="c-page-title title-text">Клиенты</div>
+      </div>
+      <div class="col-xs-6 text-xs-right">
+        <span class="mdi mdi-plus-circle-outline action-btn c-new-item c-manager-mode" title="Новый польователь"></span>
+      </div>
+    </div>
+  </div>
+  <div class="content-block row">
+    <div class="list-block col-xs-6">
+      <div class="c-header-region"></div>
+      <div class="c-list-region"></div>
+    </div>
+    <div class="item-details-block col-xs-6 c-list-item-region c-scrollbox"></div>
+  </div>
+  <div class="c-main"></div>
+  <div class="c-popup"></div>
+</div>
+
+
+<script type="text/html" id="user-list-template">
+    <div class="c-grid-block"></div>
+    <div class="c-footer backgrid-paginator"></div>
+</script>
+
+<script type="text/html" id="user-list-item-template">
+    <div class="block-title list-item-title">{{last_name}} {{first_name}} {{patronym}}</div>
+    <span class="additional-info">{{phone_number}}</span>
+    <span class="remove-item-btn c-remove mdi mdi-close c-manager-mode"></span>
+</script>
+
+<script type="text/html" id="edit-user-template">
+  <div class="top-action-row">
+    <span class="c-save-btn action-btn mdi mdi-checkbox-marked-circle-outline c-manager-mode" title="Сохранить"></span>
+    <button type="submit" style="display: none" class="c-save-btn">Сохранить</button>
+  </div>
+  <div class="form">
+      <div class="row">
+        <span class="col-lg-3 col-xs-12 text-xs-left text-lg-right field-label">Фамилия </span>
+        <span class="col-lg-9 col-xs-12">
+            <input type="text" class="c-last-name" value="{{last_name}}">
+        </span>
+      </div>
+      <div class="row">
+        <span class="col-lg-3 col-xs-12 text-xs-left text-lg-right field-label">Имя </span>
+        <span class="col-lg-9 col-xs-12">
+            <input type="text" class="c-first-name" value="{{first_name}}">
+        </span>
+      </div>
+      <div class="row">
+        <span class="col-lg-3 col-xs-12 text-xs-left text-lg-right field-label">Отчество </span>
+        <span class="col-lg-9 col-xs-12">
+            <input type="text" class="c-patronym" value="{{patronym}}">
+        </span>
+      </div>
+      <div class="row">
+        <span class="col-lg-3 col-xs-12 text-xs-left text-lg-right field-label">Телефон </span>
+        <span class="col-lg-9 col-xs-12">
+            <input type="text" class="c-phone" value="{{phone_number}}">
+        </span>
+      </div>
+    </form>
+    <div class="c-accounts-list"></div>
+</script>
+
+<script type="text/html" id="users-list-filters-template">
+<div class="filters-block">
+    <div class="input-with-icon">
+        <input type="text" class="c-search" placeholder="поиск">
+        <span class="icon mdi mdi-account-search"></span>
+    </div>
+</div>
+</script>
+
+<%= render 'accounts/accounts_list_template'%>

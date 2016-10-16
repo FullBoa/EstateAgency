@@ -1,0 +1,115 @@
+﻿@import "mixins";
+
+
+.overlay {
+    background: rgba(0, 0, 0, .3);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+$default-width: 540px;
+$padding: 30px;
+
+.popup {
+    position: fixed;
+    width: $default-width;
+    top: 200px;
+    left: 0px;
+    right: 0px;
+    margin: 0 auto;
+    background: #fff;
+    @include border-box;
+    @include box-shadow(0 0 40px rgba(0, 0, 0, .3));
+    line-height: 1.4;
+}
+
+.popup-delete {
+    position: fixed;
+    width: $default-width;
+    top: 200px;
+    left: 0px;
+    right: 0px;
+    margin: 0 auto;
+    background: #fff;
+    @include border-box;
+    @include box-shadow(0 0 40px rgba(215, 44, 44, 0.9));
+    line-height: 1.4;
+}
+
+.popup-head {
+  background: #3E3E3E;
+  padding: $padding;
+  font-weight: bold;
+  color: #FFFFFF;
+  font-size: 1.2em;
+}
+
+.popup-body {
+    padding: 20px $padding 10px $padding;
+
+    p {
+        margin-top: 0;
+    }
+}
+
+.popup-footer {
+    text-align: right;
+    padding: 20px $padding 20px $padding;
+
+    button, input[type="button"], input[type="submit"] {
+        margin-left: 5px;
+    }
+}
+
+.popup-close {
+    float: right;
+    font-size: 1.2em;
+    opacity: .6;
+    cursor: pointer;
+    margin: -2px 0 0 10px;
+    @include trans;
+
+    &:hover {
+        opacity: .9;
+    }
+}
+
+/*
+.popup-loader {
+    @side: 40px;
+    .spinner(@side);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin: -@side/2 0 0 -@side/2;
+    opacity: 1;
+}
+*/
+
+.popup-compressed {
+    bottom: 20px;
+    overflow: auto;
+}
+
+.popup-fix-edge {
+    left: 10px;
+    right: 10px;
+    width: auto !important;
+    min-width: 0 !important;
+}
+
+/*
+.overlay.loading {
+
+    &::before {
+        content: '';
+        .popup-loader;
+    }
+
+    + .popup {
+        display: none;
+    }
+}*/

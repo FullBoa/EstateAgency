@@ -1,0 +1,154 @@
+<%= stylesheet_link_tag    'Bundles/estates', media: 'all', 'data-turbolinks-track' => false %>
+<%= javascript_include_tag 'Bundles/estates', 'data-turbolinks-track' => false %>
+
+<%= render 'shared/navigation_panel'%>
+<div class="main-block" id="main-block">
+  <div class="title-row page-title">
+      <div class="row">
+        <div class="col-xs-10">
+          <div class="c-page-title title-text">Объекты</div>
+        </div>
+        <div class="col-xs-2 text-xs-right">
+          <span class="mdi mdi-plus-circle-outline action-btn c-new-item c-manager-mode" title="Новый объект"></span>
+        </div>
+    </div>
+  </div>
+  <div class="content-block row">
+     <div class="list-block col-xs-6">
+       <div class="c-header-region"></div>
+       <div class="c-list-region"></div>
+     </div>
+     <div class="col-xs-6 c-list-item-region item-details-block c-scrollbox"></div>
+  </div>
+  <div class="c-main"></div>
+  <div class="c-popup"></div>
+</div>
+
+
+<script type="text/html" id="estate-list-template">
+    <div class="c-header"></div>
+    <div class="c-grid-block"></div>
+    <div class="c-footer backgrid-paginator"></div>
+</script>
+
+<script type="text/html" id="estate-list-item-template">
+    <div class="block-title list-item-title">{{type}}.&nbsp;{{city_area}} <span class="currency">{{cost}} </span></div>
+    <span class="additional-info">{{description}}</span>
+    <span class="remove-item-btn c-remove mdi mdi-close c-manager-mode"></span>
+</script>
+
+<script type="text/html" id="estates-list-filters-template">
+<div class="filters-block">
+    <div class="row">
+        <div class="col-md-4 filter-item">
+            <select class="c-estate-type-filter" multiple></select>
+        </div>
+        <div class="col-md-4 filter-item">
+            <select class="c-city-area-filter" multiple></select>
+        </div>
+        <div class="col-md-4 filter-item c-manager-mode">
+            <select class="c-status" multiple></select>
+        </div>
+        <div class="col-md-2 filter-item c-user-mode">
+            <input type="text" class="c-min-footage" placeholder="кв.м. от">
+        </div>
+        <div class="col-md-2 filter-item c-user-mode">
+            <input type="text" class="c-max-footage" placeholder="кв.м. до">
+        </div>
+    </div>
+    <div class="row cost-slider">
+        <div class="col-md-2 hidden-sm hidden-xs">
+            <input type="text" class="c-cost-min-filter">
+        </div>
+        <div class="col-md-8 col-xs-12 slider-box">
+            <div class="c-cost-slider"></div>
+        </div>
+        <div class="col-md-2 hidden-xs hidden-sm">
+            <input type="text" class="c-cost-max-filter">
+        </div>
+    </div>
+    <div class="row">
+        <div class="text-xs-right col-xs-6 col-sm-7">
+            Сортировка:
+        </div>
+        <div class="col-xs-6 col-sm-5">
+            <select class="c-order-by"></select>
+        </div>
+    </div>
+</div>
+</script>
+
+<script type="text/html" id="edit-estate-template">
+  <div class="top-action-row">
+    <span class="c-save-btn action-btn mdi mdi-checkbox-marked-circle-outline c-manager-mode" title="Сохранить"></span>
+    <button type="submit" style="display: none" class="c-save-btn">Сохранить</button>
+  </div>
+  <div class="form" id="estate-edit-form">
+      <div class="row">
+        <span class="col-lg-3 col-xs-12 text-xs-left text-lg-right field-label">Стоимость </span>
+        <span class="col-lg-9 col-xs-12">
+            <input type="text" class="c-cost  c-manager-mode" value="{{cost}}">
+            <span class="c-cost c-user-mode currency">{{cost}}</span>
+        </span>
+      </div>
+      <div class="row">
+        <span class="col-lg-3 col-xs-12 text-xs-left text-lg-right field-label">Тип объекта </span>
+        <span class="col-lg-9 col-xs-12">
+            <select class="c-estate_type c-manager-mode" value="{{type_id}}"></select>
+            <span class="c-user-mode">{{type}}</span>
+        </span>
+      </div>
+      <div class="row">
+        <span class="col-lg-3 col-xs-12 text-xs-left text-lg-right field-label">Район города </span>
+        <span class="col-lg-9 col-xs-12">
+            <select class="c-city-area c-manager-mode" value="{{city_area_id}}"></select>
+            <span class="c-user-mode">{{city_area}}</span>
+        </span>
+      </div>
+      <div class="row">
+        <span class="col-lg-3 col-xs-12 text-xs-left text-lg-right field-label">Метраж </span>
+        <span class="col-lg-9 col-xs-12">
+            <input type="text" class="c-footage c-manager-mode" value="{{#footage}}{{footage}}{{/footage}}">
+            <span class="c-user-mode">{{footage}}</span>
+        </span>
+      </div>
+        <div class="row">
+        <span class="col-lg-3 col-xs-12 text-xs-left text-lg-right field-label">Адрес </span>
+        <span class="col-lg-9 col-xs-12">
+            <input type="text" class="c-address c-manager-mode" value="{{#address}}{{address}}{{/address}}">
+            <span class="c-user-mode">{{address}}</span>
+        </span>
+      </div>
+      <div class="row">
+        <span class="col-lg-3 col-xs-12 text-xs-left text-lg-right field-label">Описание </span>
+        <span class="col-lg-9 col-xs-12">
+            <textarea type="text" class="c-estate-description c-manager-mode"> {{#description}}{{description}}{{/description}}</textarea>
+            <span class="c-user-mode">{{description}}</span>
+        </span>
+      </div>
+      <div class="row">
+        <span class="col-lg-3 col-xs-12 text-xs-left text-lg-right field-label">Арендодатель </span>
+        <span class="col-lg-9 col-xs-12">
+            <input type="text" class="c-owner_name c-manager-mode" value="{{#owner_name}}{{owner_name}}{{/owner_name}}">
+            <span class="c-user-mode">{{owner_name}}</span>
+        </span>
+      </div>
+      <div class="row">
+        <span class="col-lg-3 col-xs-12 text-xs-left text-lg-right field-label">Телефон </span>
+        <span class="col-lg-9 col-xs-12">
+            <input type="text" class="c-owner_phone c-manager-mode" value="{{#owner_phone}}{{owner_phone}}{{/owner_phone}}">
+            <span class="c-user-mode">{{owner_phone}}</span>
+        </span>
+      </div>
+      <div class="row c-manager-mode    ">
+        <span class="col-lg-3 col-xs-12 text-xs-left text-lg-right field-label">Статус объекта </span>
+        <span class="col-lg-9 col-xs-12">
+            <select class="c-estate_status" value="{{status_enum}}"></select>
+            <span class="c-user-mode">{{status}}</span>
+        </span>
+      </div>
+  </form>
+  <div class="c-estate-revisions"><div>
+</script>
+
+<%= render 'estate_revisions/estate_revisions_list_template'%>

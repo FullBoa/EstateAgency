@@ -1,0 +1,15 @@
+.list-item {
+  //border-left: 5px solid #BBBBBB;
+
+  &.obsolete {
+    border-left: 5px solid #cc0000;
+  }
+
+  &.need-verify {
+    border-left: 5px solid #c6af33;
+  }
+}
+
+.details-content .currency {
+  font-size: 1.6em;
+}

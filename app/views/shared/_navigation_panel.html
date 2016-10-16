@@ -1,0 +1,11 @@
+<div class="main-menu-panel navbar navbar-default">
+    <div class="container">
+        <ui class="nav navbar-nav">
+            <li class="menu-link" ><a  class="menu-link" href="/">Главная</a></li>
+            <li class="c-manager-mode menu-link"><a href="/users">Пользователи</a></li>
+            <li class="menu-link"><a href="/estates">Объекты</a></li>
+            <li class="menu-link"><a href="/accounts/my">Мой аккаунт</a></li>
+            <li class="menu-link"><%= link_to('Выход', destroy_account_session_path, :method => :delete) %></li>
+        </ui>
+    </div>
+</div>

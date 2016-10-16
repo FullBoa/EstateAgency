@@ -1,0 +1,46 @@
+$nav-panel-size: 50px;
+$green-color: #0F6D0F;
+
+@mixin border-box {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+@mixin content-box {
+  box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+}
+
+@mixin box-shadow($parameters){
+  box-shadow: $parameters;
+  -moz-box-shadow: $parameters;
+}
+@mixin trans($dur: .1s) {
+  -webkit-transition: linear $dur;
+  -moz-transition: linear $dur;
+  -o-transition: linear $dur;
+  transition: linear $dur;
+}
+
+@mixin trans-out($dur: .1s) {
+  -webkit-transition: ease-out $dur;
+  -moz-transition: ease-out $dur;
+  -o-transition: ease-out $dur;
+  transition: ease-out $dur;
+}
+
+@mixin trans-in($dur: .1s) {
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+@mixin push-up-btn($radius: 10px, $color: #989898) {
+  box-shadow: $color 3px 3px $radius;
+  &:active {
+    @include trans;
+    box-shadow: none;
+  }
+}

@@ -1,0 +1,2 @@
+module AccountEstateTypesHelper
+end

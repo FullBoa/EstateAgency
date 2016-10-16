@@ -1,0 +1,27 @@
+﻿@import "Core/mixins";
+
+.noUi-connect {
+  background: #3E3E3E;
+}
+.noUi-target {
+ // border: none;
+  height: 10px;
+}
+.noUi-handle {
+  border-radius: 50%;
+  border: 1px solid;
+  box-shadow: none;
+  cursor: pointer;
+
+  &:after,&:before{
+    display: none
+  }
+}
+.noUi-horizontal .noUi-handle {
+  width: 30px;
+  height: 30px;
+  left: -17px;
+  top: -11px;
+
+}
+

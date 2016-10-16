@@ -1,0 +1,50 @@
+<script type="text/html" id="estate-revisions-list-template">
+    <input type="checkbox" class="toggle-chb"  id="revisions-list-chb" />
+    <div class="title-row c-manager-mode">
+        <div class="row">
+            <div class="col-xs-10">
+                <div class="c-page-title title-text">
+                    Актуализация
+                    <label for="revisions-list-chb" class="expand-btn mdi mdi-chevron-right"></label>
+                </div>
+            </div>
+            <div class="col-xs-2 text-xs-right">
+                <span class="mdi mdi-plus-circle-outline action-btn c-new-revision-btn c-manager-mode" title="Внести информацию"></span>
+            </div>
+        </div>
+    </div>
+    <span class="c-items c-manager-mode expandable-list"></span>
+</script>
+
+<script type="text/html" id="estate-revisions-list-item-template">
+    <h5>{{created_at}} - {{revision_result}}</h5>
+    <span class="remove-item-btn c-remove mdi mdi-close c-manager-mode"></span>
+</script>
+
+<script id="create-revision-dialog-template" type="text/html">
+    <div class="overlay c-close-dialog"></div>
+    <div class="popup popup-l">
+        <div class="popup-head">
+            <div class="popup-close mdi mdi-close c-close-dialog"></div>
+            Результат прозвона
+        </div>
+        <div class="popup-body form">
+            <div class="row">
+                <div class="col-xs-5 text-xs-right field-label">Дата прозвона</div>
+                <div class="col-xs-7">
+                    <input type="text" class="datepicker c-created-at">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-5 text-xs-right field-label">Результат</div>
+                <div class="col-xs-7">
+                    <select class="c-result"></select>
+                </div>
+            </div>
+        </div>
+        <div class="popup-footer">
+            <button class="btn light-btn c-close-dialog">Отмена</button>
+            <button class="btn light-btn c-accept">Далее</button>
+        </div>
+    </div>
+</script>

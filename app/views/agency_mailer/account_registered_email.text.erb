@@ -1,0 +1,6 @@
+Менеджер <%= @creator_account.user.last_name %> <%= @creator_account.user.first_name %> <%= @creator_account.user.patronym if @creator_account.user.patronym %> зарегистрировал новый аккаунт для пользователя 
+<%= @account.user.last_name %> <%= @account.user.first_name %> <%= @account.user.patronym if @account.user.patronym %>,
+тел. <%= @account.user.phone_number %>
+
+Логин: <%= @account.login %>
+Пароль: <%= @account.password %>

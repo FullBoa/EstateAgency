@@ -1,0 +1,69 @@
+<script type="text/html" id="account-list-template">
+  <div class="title-row c-manager-mode">
+        <div class="row">
+            <div class="col-xs-10">
+                <div class="c-page-title title-text">Учетные записи</div>
+            </div>
+            <div class="col-xs-2 text-xs-right">
+                <span class="mdi mdi-plus-circle-outline action-btn c-new-account-btn c-manager-mode" title="Новая учетная запись"></span>
+            </div>
+        </div>
+  </div>
+  <span class="c-items c-manager-mode"></span>
+</script>
+
+<script type="text/html" id="account-list-item-template">
+    <span class="left-icon mdi {{^is_manager}}mdi-coin{{/is_manager}}{{#is_manager}}mdi-headset{{/is_manager}}"></span>
+    <div>{{login}} {{^is_manager}}: c {{start_date}} по {{end_date}}{{/is_manager}}</div>
+    <span class="c-estate-types additional-info"></span>
+    <span class="remove-item-btn c-remove mdi mdi-close c-manager-mode"></span>
+</script>
+
+<script id="create-account-template" type="text/html">
+    <div class="overlay"></div>
+    <div class="popup popup-l">
+        <div class="popup-head">
+            <div class="popup-close mdi mdi-close c-close-dialog"></div>
+            Новая учетная запись
+        </div>
+        <div class="popup-body form">
+            <div class="row c-field">
+                <div class="col-xs-6 field-label text-xs-right">Тип учетной записи</div>
+                <div class="col-xs-6">
+                    <select type="text" class="c-account-type"></select>
+                </div>
+            </div>
+            <div class="row c-field">
+                <div class="col-xs-6 field-label text-xs-right">Начало действия</div>
+                <div class="col-xs-6">
+                    <input type="text" class="datepicker c-start-date">
+                </div>
+            </div>
+            <div class="row c-field">
+                <div class="col-xs-6 field-label text-xs-right">Срок действия</div>
+                <div class="col-xs-6">
+                    <select type="text" class="datepicker c-duration">
+                        <option value="1">1 месяц</option>
+                        <option value="2">2 месяца</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row c-field">
+                <div class="col-xs-6 field-label text-xs-right">Типы объектов</div>
+                <div class="col-xs-6">
+                    <select class="c-estate-types" multiple></select>
+                </div>
+            </div>
+            <div class="row c-field">
+                <span class="col-xs-6 field-label text-xs-right">Стоимость</span>
+                <div class="col-xs-6">
+                    <input type="text" class="c-account-cost" value="0">
+                </div>
+             </div>
+        </div>
+        <div class="popup-footer">
+            <button class="btn light-btn c-close-dialog">Отмена</button>
+            <button class="btn light-btn c-accept">Далее</button>
+        </div>
+    </div>
+</script>

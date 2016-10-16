@@ -1,0 +1,28 @@
+@import "mixins";
+
+.toggle-chb {
+  display: none;
+}
+
+.toggle-chb:checked ~ .expandable-list {
+  display: block;
+}
+.toggle-chb:checked + div {
+  .expand-btn {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    @include trans(0.3s)
+  }
+}
+.expand-btn {
+  cursor: pointer;
+  color: #7d7d7d;
+  @include trans(0.3s)
+}
+
+.expandable-list {
+  display: none;
+}

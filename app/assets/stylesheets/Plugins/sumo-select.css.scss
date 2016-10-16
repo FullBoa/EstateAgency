@@ -1,0 +1,28 @@
+﻿@import "../Core/mixins";
+.SumoSelect {
+  width: 100%;
+
+  .select-all {
+    @include content-box;
+  }
+  .SlectBox {
+    width: 100%;
+
+    height: 35px;
+    line-height: 24px;
+
+    span.placeholder {
+      font-style: normal;
+    }
+  }
+
+  .optWrapper.open {
+    top: 38px
+  }
+
+  .optWrapper.multiple.open .options li.selected span i,
+  .select-all.selected span i{
+      background-color: $green-color;
+  }
+}
+

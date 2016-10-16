@@ -1,0 +1,40 @@
+@import "mixins";
+
+$menu-background-color: #3e3e3e;
+$menu-hover-color: #80807E;
+$menu-text-color: #D7D5D0;
+
+.main-menu-panel{
+  background-color: $menu-background-color;
+  color: $menu-text-color;
+  border: none;
+  text-align: center;
+  border-radius: 0px;
+  font-size: 1.2em;
+  z-index: 10;
+
+
+  .nav.navbar-nav {
+    float: none;
+    display: inline-block;
+  }
+  .nav.navbar-nav li.menu-link:hover:after {
+    position: absolute;
+    width: 100%;
+    content: ' ';
+    height: 6px;
+    display: inline-block;
+    background-color: white;
+    left: 0px;
+    bottom: -6px;
+    @include trans
+  }
+
+  .nav.navbar-nav li.menu-link a {
+    color : $menu-text-color;
+
+    &:hover{
+    }
+  }
+
+}
